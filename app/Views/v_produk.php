@@ -21,9 +21,13 @@ if (session()->getFlashData('failed')) {
 }
 ?>
 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addModal">
-    <i class="bi bi-plus"></i>
+    <i class="bi bi-plus"></i>  
     Tambah Data
 </button>
+<a type="button" class="btn btn-primary" href="<?= base_url() ?> produk/download">
+    <i class="bi bi-download"></i>  
+    Download Data
+</a>
 <!-- Table with stripped rows -->
 <table class="table datatable">
     <thead>
