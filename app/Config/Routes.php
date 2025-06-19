@@ -12,7 +12,7 @@ $routes->get('login', 'AuthController::login');
 $routes->post('login', 'AuthController::login');
 $routes->get('logout', 'AuthController::logout');
 
-$routes->group('produk', ['filter' => 'auth'], function ($routes) { 
+$routes->group('produk', ['filter' => 'auth'], function ($routes) {
     $routes->get('', 'ProdukController::index');
     $routes->post('', 'ProdukController::create');
     $routes->post('edit/(:any)', 'ProdukController::edit/$1');
@@ -34,6 +34,8 @@ $routes->post('buy', 'TransaksiController::buy', ['filter' => 'auth']);
 $routes->get('get-location', 'TransaksiController::getLocation', ['filter' => 'auth']);
 $routes->get('get-cost', 'TransaksiController::getCost', ['filter' => 'auth']);
 
+$routes->get('profil2', 'Home::profile', ['filter' => 'auth']);
+$routes->resource('api', ['controller' => 'apiController']);
 
 $routes->get('faq', 'Home::faq', ['filter' => 'auth']);
 $routes->get('profil', 'profil::index', ['filter' => 'auth']);
